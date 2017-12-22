@@ -5,9 +5,6 @@ TMDb Movie Search is a responsive [React](http://facebook.github.io/react/index.
 
 ![](https://github.com/SKempin/reactjs-tmdb-app/blob/master/docs/images/tmdb-demo.gif)
 
-## Demo
-[TMDb Movie Search - Live DEMO](https://skempin.github.io/reactjs-tmdb-app/)
-
 ## Tools
 Key tools used in this React project are:
 

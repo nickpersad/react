@@ -3,10 +3,10 @@
   "version": "0.0.4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SKempin/reactjs-tmdb-app.git"
+    "url": "https://github.com/nickpersad/react.git"
   },
   "scripts": {
-      "start": "gulp watch"
+      "start": "gulp maniac"
   },
   "dependencies": {
     "bloodhound-js": "^1.2.1",

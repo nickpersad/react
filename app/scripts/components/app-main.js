@@ -7,7 +7,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      movieID: 155 // set initital load movie - Interstellar
+      movieID: 155 // set initital load movie - The Dark Knight
     }
   }
   render() {
