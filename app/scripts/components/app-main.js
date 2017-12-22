@@ -23,6 +23,16 @@ class App extends Component {
   fetchApi(url) {
 
     fetch(url).then((res) => res.json()).then((data) => {
+      var genreArr = []
+      var genreVerbage = 'Genre'
+      for (var genre in data.genres) {
+        genreArr.push(data.genres[genre]['name'])
+      }
+
+      if (genreArr.length > 1) {
+        genreVerbage = 'Genres'
+      }
+
       // update state with API data
       this.setState({
         movieID: data.id,
@@ -33,7 +43,8 @@ class App extends Component {
         poster: data.poster_path,
         production: data.production_companies,
         production_countries: data.production_countries,
-        genre: data.genres,
+        genre: genreArr.join(', '),
+        genreVerbage: genreVerbage,
         release: data.release_date,
         vote: data.vote_average,
         runtime: data.runtime,

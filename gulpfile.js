@@ -84,7 +84,7 @@ gulp.task('serve', function() {
     gulp.src('dist')
         .pipe($.webserver({
             livereload: true,
-            port: 9000,
+            port: 2000,
             open: true
         }));
 });
