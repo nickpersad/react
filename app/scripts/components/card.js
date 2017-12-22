@@ -1,49 +1,41 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
 let numeral = require('numeral');
 let backdropIMG;
 
 class Card extends Component {
-
   render() {
     let data = this.props.data
-      // if movie ID found, then...
+    let posterIMG = 'https://image.tmdb.org/t/p/w500' + data.poster,
+        production = data.production,
+        productionCountries = data.production_countries,
+        genres = data.genre,
+        totalRevenue = data.revenue,
+        productionList = nestedDataToString(production),
+        productionCountriesList = nestedDataToString(productionCountries),
+        noData = '-';
 
+        backdropIMG = 'https://image.tmdb.org/t/p/original' + data.backdrop;
 
+    // conditional statements for no data
+    if (data.vote === 'undefined' || data.vote === 0) {
+      data.vote = noData
+    } else {
+      data.vote = data.vote + ' / 10'
+    };
 
-      let posterIMG = 'https://image.tmdb.org/t/p/w500' + data.poster,
-          production = data.production,
-          productionCountries = data.production_countries,
-          genres = data.genre,
-          totalRevenue = data.revenue,
-          productionList = nestedDataToString(production),
-          productionCountriesList = nestedDataToString(productionCountries),
-          noData = '-',
-          genresList = nestedDataToString(genres);
-          backdropIMG = 'https://image.tmdb.org/t/p/original' + data.backdrop;
+    if (totalRevenue === 'undefined' || totalRevenue === 0) {
+      totalRevenue = noData
+    } else {
+      totalRevenue = numeral(data.revenue).format('($0,0)');
+    };
 
+    if (data.poster == null){
+      posterIMG = '/images/not-available.png';
+    }
 
-
-      // conditional statements for no data
-       if (data.vote === 'undefined' || data.vote === 0) {
-          data.vote = noData
-        } else {
-          data.vote = data.vote + ' / 10'
-        };
-
-      if (totalRevenue === 'undefined' || totalRevenue === 0) {
-           totalRevenue = noData
-         } else {
-           totalRevenue = numeral(data.revenue).format('($0,0)');
-         };
-
-      if(data.poster == null){
-        posterIMG = '/images/not-available.png';
-      }
-
-
-
-      return (
+    return (
         <div className="col-xs-12 cardcont nopadding">
 
           <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5">
@@ -52,7 +44,6 @@ class Card extends Component {
             <span className="tagline">{data.tagline}</span>
             <p>{data.overview}</p>
             <div className="additional-details">
-              <span className="genre-list">{genresList}</span>
               <span className="production-list">{productionList}</span>
               <div className="row nopadding release-details">
                 <div className="col-xs-6"> Original Release: <span className="meta-data">{data.release}</span></div>
