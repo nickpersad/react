@@ -32,7 +32,7 @@ class Card extends Component {
     };
 
     if (data.poster == null){
-      posterIMG = '/images/not-available.png';
+      posterIMG = 'http://novavision-it.com/novavisionseo/img/not-available.png';
     }
 
     return (
@@ -44,7 +44,6 @@ class Card extends Component {
             <span className="tagline">{data.tagline}</span>
             <p>{data.overview}</p>
             <div className="additional-details">
-              <span className="production-list">{productionList}</span>
               <div className="row nopadding release-details">
                 <div className="col-xs-6"> Original Release: <span className="meta-data">{data.release}</span></div>
                 <div className="col-xs-6"> Running Time: <span className="meta-data">{data.runtime} mins</span> </div>
