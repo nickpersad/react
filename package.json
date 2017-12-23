@@ -16,7 +16,8 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "typeahead": "^0.2.2",
-    "whatwg-fetch": "^2.0.1"
+    "whatwg-fetch": "^2.0.1",
+    "paginator": "^1.0.0"
   },
   "devDependencies": {
     "babelify": "^6.0.2",
@@ -47,6 +48,6 @@
       "babelify"
     ]
   },
-  "author": "Nick Persad <info@lyonsbuilt.com>",
+  "author": "Nick Persad <nick@lyonsbuilt.com>",
   "license": "MIT"
 }
