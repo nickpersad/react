@@ -16,6 +16,7 @@ class App extends Component {
       <div>
         <SearchBox fetchMovieID={this.fetchMovieID.bind(this)} />
         <Card data={this.state} />
+        <img id="dp" src="https://www.themoviedb.org/static_cache/v4/marketing/deadpool-06f2a06d7a418ec887300397b6861383bf1e3b72f604ddd5f75bce170e81dce9.png"/>
         <Showing />
       </div>
     )

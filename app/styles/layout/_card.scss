@@ -6,9 +6,15 @@
 
 /* discover */
 .discovercont {
-  margin-top: 100px;
+  margin-top: -70px;
   border-radius: 3px;
   background: #e4e4e4;
+  h2 {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    padding-left: 15px;
+  }
 }
 
 /* poster */

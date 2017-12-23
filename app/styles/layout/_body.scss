@@ -25,3 +25,9 @@ a {
 #app {
     animation: fadein ease-out 1.4s;
 }
+
+img#dp {
+  width: 100%;
+  position: relative;
+  z-index: 99;
+}
