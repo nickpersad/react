@@ -2,6 +2,7 @@
 .cardcont {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 75px;
 }
 
 /* discover */
@@ -107,6 +108,19 @@
 }
 
 /* Breakpoints */
+
+// lg up
+@include media-breakpoint-up(lg) {
+  /* discover */
+  .discovercont {
+    margin-top: -50px;
+    h2 {
+      padding-left: 50px;
+      margin-top: -75px;
+      font-size: 3rem;
+    }
+  }
+}
 
 // sm up
 @include media-breakpoint-up(sm) {
