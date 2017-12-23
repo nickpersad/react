@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-const TMDBLogo = 'https://www.themoviedb.org/assets/static_cache/27b65cb40d26f78354a4ac5abf87b2be/images/v4/logos/powered-by-rectangle-green.svg';
+const TMDBLogo = 'https://www.themoviedb.org/assets/static_cache/22af8ff1419ab3b085608e48ae299d1e/images/v4/logos/stacked-green.svg';
 
 class SearchBox extends Component {
   handleChange(event) {
