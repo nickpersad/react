@@ -101,9 +101,10 @@ class App extends Component {
     }.bind(this)); // END Instantiate the Typeahead UI
     //========================= END TYPEAHEAD ==============================//
 
-    $(document).on('click', '.card', function() {
-      var movieId = $(this).attr('id')
-      this.fetchMovieID(movieId)
+    $(document).on('click', '.card', function(e) {
+      e.preventDefault()
+      this.fetchMovieID(e.toElement.offsetParent.id)
+      $("html, body").animate({ scrollTop: 0 }, "slow")
     }.bind(this));
 
   } // end component did mount function
