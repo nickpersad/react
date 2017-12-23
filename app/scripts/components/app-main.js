@@ -10,16 +10,13 @@ class App extends Component {
     this.state = {
       movieID: 155 // set initital load movie - The Dark Knight
     }
-    this.shows = {
-      showYear: 2017
-    }
   }
   render() {
     return (
       <div>
         <SearchBox fetchMovieID={this.fetchMovieID.bind(this)} />
         <Card data={this.state} />
-        <Showing  />
+        <Showing />
       </div>
     )
   } // END render
@@ -58,27 +55,25 @@ class App extends Component {
 
       })
     })
-  } // end function
 
-  fetchDiscoverApi(url) {
-    fetch(url).then((res) => res.json()).then((data) => {
-      this.setState({
-        shows: data
-      })
-    })
-  }
+  } // end function
 
   fetchMovieID(movieID) {
     let url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=ef77c3eda1e7e0c11a7c04c61b0d4151`
     this.fetchApi(url)
   } // end function
 
+  fetchDiscover(movieID) {
+    let url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=ef77c3eda1e7e0c11a7c04c61b0d4151`
+    this.setState({
+      shows: 'shows'
+    })
+  } // end function
+
   componentDidMount() {
     let url = `https://api.themoviedb.org/3/movie/${this.state.movieID}?&api_key=ef77c3eda1e7e0c11a7c04c61b0d4151`
-    let discoverUrl = `https://api.themoviedb.org/3/discover/movie?api_key=ef77c3eda1e7e0c11a7c04c61b0d4151&language=en-US&sort_by=popularity.desc&include_video=false&page=1&primary_release_year=2017`
 
     this.fetchApi(url)
-    this.fetchDiscoverApi(discoverUrl)
 
     //========================= BLOODHOUND ==============================//
     let suggests = new Bloodhound({
