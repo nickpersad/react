@@ -25,6 +25,10 @@
     border-radius: 0 0 3px 3px;
   }
   .card {
+    cursor: pointer;
+    &:hover {
+      border-color: red;
+    }
     border-color: #adadad;
     border-bottom-width: 3px;
     img {
