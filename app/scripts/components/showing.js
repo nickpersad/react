@@ -38,13 +38,14 @@ console.log(data['results'])
               <div className="discover-container col-xs-12">
                 <div className="row">
                   {this.state.pageOfItems.map(item =>
-                        <div key={item.id} className="col-xs-4 mx-auto">
-                          <div className="card mb-2">
+                        <div key={item.id} className="col-xs-6">
+                          <div className="card">
                             <div className="card-header">
                               {item.title}
                             </div>
                             <div class="card-body">
                               <img className="card-img-top poster" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
+                              <p class="card-text">{item.overview}</p>
                             </div>
                           </div>
                         </div>

@@ -8,7 +8,7 @@
 .discovercont {
   margin-top: 100px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 1);
+  background: #e4e4e4;
 }
 
 /* poster */
@@ -24,7 +24,24 @@
     width: 50%;
     border-radius: 0 0 3px 3px;
   }
-
+  .card {
+    border-color: #adadad;
+    border-bottom-width: 3px;
+    img {
+      width: 50%;
+      max-height: 200px;
+      overflow:hidden;
+    }
+    p {
+      max-height: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      padding: 0 5px;
+    }
+  }
 }
 
 /* meta data */
