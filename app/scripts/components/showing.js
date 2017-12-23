@@ -6,20 +6,21 @@ class Showing extends Component {
   constructor() {
         super();
 
-        // an example array of items to be paged
-        // var exampleItems = _.range(1, 100).map(i => { return { id: i, name: 'Item ' + i }; });
-        var exampleItems = [];
-        for (var i = 0; i < 100; i++) {
-            exampleItems.push({
-                id: i,
-                name: 'Item ' + i
-            });
-        }
-
         this.state = {
-            exampleItems: exampleItems,
+            exampleItems: [],
             pageOfItems: []
         };
+
+        // the api request function
+        var url = `https://api.themoviedb.org/3/discover/movie?api_key=ef77c3eda1e7e0c11a7c04c61b0d4151&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=2017`
+
+        fetch(url).then((res) => res.json()).then((data) => {
+
+          this.setState({
+            exampleItems: data['results'],
+            pageOfItems: []
+          })
+        })
 
         // bind function in constructor instead of render (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
         this.onChangePage = this.onChangePage.bind(this);
@@ -31,16 +32,16 @@ class Showing extends Component {
     }
 
     render() {
-        return (
+      return (
           <div className="col-xs-12 discovercont nopadding">
               <div className="discover-container col-xs-12">
                   {this.state.pageOfItems.map(item =>
-                      <div key={item.id}>{item.name}</div>
+                      <div key={item.id}>{item.title}</div>
                   )}
                   <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
               </div>
           </div>
-        );
+        )
     }
 }
 module.exports = Showing;

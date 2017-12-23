@@ -137,7 +137,4 @@ class Pagination extends React.Component {
     }
 }
 
-Pagination.propTypes = propTypes;
-Pagination.defaultProps = defaultProps;
-
 module.exports = Pagination;

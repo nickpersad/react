@@ -23,7 +23,6 @@ class App extends Component {
 
   // the api request function
   fetchApi(url) {
-
     fetch(url).then((res) => res.json()).then((data) => {
       var genreArr = []
       var genreVerbage = 'Genre'
@@ -34,7 +33,6 @@ class App extends Component {
       if (genreArr.length > 1) {
         genreVerbage = 'Genres'
       }
-
       // update state with API data
       this.setState({
         movieID: data.id,
@@ -61,13 +59,6 @@ class App extends Component {
   fetchMovieID(movieID) {
     let url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=ef77c3eda1e7e0c11a7c04c61b0d4151`
     this.fetchApi(url)
-  } // end function
-
-  fetchDiscover(movieID) {
-    let url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=ef77c3eda1e7e0c11a7c04c61b0d4151`
-    this.setState({
-      shows: 'shows'
-    })
   } // end function
 
   componentDidMount() {
