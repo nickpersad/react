@@ -32,16 +32,14 @@ class Showing extends Component {
 
     render() {
         return (
-            <div>
-                <div className="container">
-                    <div className="text-center">
-                        {this.state.pageOfItems.map(item =>
-                            <div key={item.id}>{item.name}</div>
-                        )}
-                        <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
-                    </div>
-                </div>
-            </div>
+          <div className="col-xs-12 discovercont nopadding">
+              <div className="discover-container col-xs-12">
+                  {this.state.pageOfItems.map(item =>
+                      <div key={item.id}>{item.name}</div>
+                  )}
+                  <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+              </div>
+          </div>
         );
     }
 }
