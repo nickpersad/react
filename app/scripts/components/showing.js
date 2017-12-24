@@ -17,7 +17,7 @@ class Showing extends Component {
         fetch(url).then((res) => res.json()).then((data) => {
           console.log(data)
           this.setState({
-            exampleItems: data['results'],
+            exampleItems: data,
             pageOfItems: []
           })
         })
@@ -43,15 +43,15 @@ class Showing extends Component {
                             <div className="card-header">
                               {item.title}
                             </div>
-                            <div class="card-body">
-                              <img className="card-img-top poster" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
-                              <p class="card-text">{item.overview}</p>
+                            <div className="card-body">
+                              <img className="poster" src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} />
+                              <p className="card-text">{item.overview}</p>
                             </div>
                           </div>
                         </div>
                   )}
                 </div>
-                  <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+                  <Pagination items={this.state.exampleItems.results} onChangePage={this.onChangePage} />
               </div>
           </div>
         )
