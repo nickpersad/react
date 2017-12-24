@@ -34,6 +34,7 @@ a {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+  z-index: 999;
 }
 
 #nav-icon4 span {
