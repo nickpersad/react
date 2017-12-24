@@ -104,6 +104,7 @@ class App extends Component {
 
     $(document).on('click', '.card', function(e) {
       e.preventDefault()
+      $('.searchbox__input').val('')
       this.fetchMovieID(e.toElement.offsetParent.id)
       $("html, body").animate({ scrollTop: 0 }, "slow")
     }.bind(this));

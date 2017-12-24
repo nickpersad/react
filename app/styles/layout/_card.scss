@@ -40,11 +40,19 @@
     border-bottom-width: 3px;
     img {
       width: 50%;
-      max-height: 200px;
+      height: 200px;
       overflow:hidden;
     }
+    .card-header {
+      height: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
     p {
-      max-height: 100px;
+      height: 50px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
