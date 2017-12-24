@@ -15,7 +15,6 @@ class Showing extends Component {
         var url = `https://api.themoviedb.org/3/discover/movie?api_key=ef77c3eda1e7e0c11a7c04c61b0d4151&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_year=2017`
 
         fetch(url).then((res) => res.json()).then((data) => {
-          console.log(data)
           this.setState({
             exampleItems: data,
             pageOfItems: []
