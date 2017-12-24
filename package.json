@@ -6,7 +6,7 @@
     "url": "https://github.com/nickpersad/react.git"
   },
   "scripts": {
-      "start": "gulp maniac"
+      "start": "gulp watch"
   },
   "dependencies": {
     "bloodhound-js": "^1.2.1",

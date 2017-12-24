@@ -129,7 +129,7 @@ gulp.task('serve:production', sync(['build:production', 'serve']));
 
 gulp.task('default', ['build']);
 
-gulp.task('maniac', sync(['clean-bundle', 'serve']), function() {
+gulp.task('watch', sync(['clean-bundle', 'serve']), function() {
     bundler.watch();
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/*.html', ['html']);
