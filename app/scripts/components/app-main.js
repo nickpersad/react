@@ -1,4 +1,14 @@
 import React, { Component } from 'react';
+import {
+  Route,
+  NavLink,
+  HashRouter
+} from "react-router-dom";
+
+import Dashboard from "./Dashboard";
+import Movies from "./Movies";
+import Help from "./Help";
+
 import SearchBox from './search';
 import Showing from './showing';
 import Card from './card';
@@ -14,6 +24,22 @@ class App extends Component {
   render() {
     return (
       <div>
+        <HashRouter>
+          <div>
+            <div id="sidebar-wrapper">
+              <ul className="sidebar-nav">
+                <li><NavLink exact to="/">Dashboard</NavLink></li>
+                <li><NavLink to="/movies">Movies</NavLink></li>
+                <li><NavLink to="/help">Help</NavLink></li>
+              </ul>
+            </div>
+            <div className="content">
+              <Route exact path="/" component={Dashboard}/>
+              <Route path="/movies" component={Movies}/>
+              <Route path="/help" component={Help}/>
+            </div>
+          </div>
+        </HashRouter>
         <SearchBox fetchMovieID={this.fetchMovieID.bind(this)} />
         <Card data={this.state} />
         <img id="dp" src="https://www.themoviedb.org/static_cache/v4/marketing/deadpool-06f2a06d7a418ec887300397b6861383bf1e3b72f604ddd5f75bce170e81dce9.png"/>
