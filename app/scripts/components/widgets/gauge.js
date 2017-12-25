@@ -7,7 +7,6 @@ class Gauge extends React.Component {
     super(props);
     this.state = {
       options: {
-        backgroundColor: '#999',
         width: 400, height: 120,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
@@ -20,6 +19,19 @@ class Gauge extends React.Component {
         ['Network', 68]
       ],
     };
+    this.changeData = this.changeData.bind(this)
+  }
+  componentDidMount() {
+    this.changeData = setInterval(this.changeData, 100);
+  }
+  changeData() {
+    this.setState({data: [
+        ['Label', 'Value'],
+        ['Memory', Math.floor(Math.random() * 100) + 1],
+        ['CPU', Math.floor(Math.random() * 100) + 1],
+        ['Network', Math.floor(Math.random() * 100) + 1]
+      ]
+    });
   }
   render() {
     return (
@@ -34,8 +46,6 @@ class Gauge extends React.Component {
         />
       </div>
     );
-  }
-  componentDidMount() {
   }
 }
 export default Gauge
