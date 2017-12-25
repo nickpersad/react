@@ -11,6 +11,9 @@ class Help extends React.Component {
       </div>
     );
   }
+  componentWillMount() {
+    document.body.style.backgroundImage = '';
+  }
 }
 
 export default Help
