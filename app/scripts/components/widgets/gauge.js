@@ -14,15 +14,19 @@ class Gauge extends React.Component {
       },
       data: [
         ['Label', 'Value'],
-        ['Memory', 80],
-        ['CPU', 55],
-        ['Network', 68]
+        ['Memory', 0],
+        ['CPU', 0],
+        ['Network', 0]
       ],
     };
     this.changeData = this.changeData.bind(this)
   }
   componentDidMount() {
-    this.changeData = setInterval(this.changeData, 100);
+    // this.changeData = setInterval(this.changeData, 500);
+    this.toggleGauge(0)
+  }
+  componentWillUnmount() {
+    clearInterval(this.changeData);
   }
   changeData() {
     this.setState({data: [
@@ -33,6 +37,23 @@ class Gauge extends React.Component {
       ]
     });
   }
+  zeroOutData() {
+    this.setState({data: [
+        ['Label', 'Value'],
+        ['Memory', 0],
+        ['CPU', 0],
+        ['Network', 0]
+      ]
+    });
+  }
+  toggleGauge(action) {
+    if (action !== 1) {
+      this.changeData = setInterval(this.changeData, 500);
+    } else {
+      clearInterval(this.changeData);
+      this.zeroOutData()
+    }
+  }
   render() {
     return (
       <div>
@@ -41,9 +62,10 @@ class Gauge extends React.Component {
           data={this.state.data}
           graph_id="Gauge"
           width="100%"
-          height="400px"
+          height="300px"
           legend_toggle
         />
+        <button type="button" className="btn btn-primary" onClick={this.toggleGauge.bind(this, 1)}>Stop</button>
       </div>
     );
   }

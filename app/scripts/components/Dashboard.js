@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-xs-8">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Gauges</h3>
@@ -48,7 +48,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-xs-4">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Timer</h3>
