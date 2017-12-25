@@ -7,15 +7,14 @@ class Bar extends React.Component {
     super(props);
     this.state = {
       options: {
-        title: 'Population of Largest U.S. Cities',
-        chartArea: {width: '50%'},
         hAxis: {
           title: 'Total Population',
           minValue: 0
         },
         vAxis: {
           title: 'City'
-        }
+        },
+        backgroundColor: '#999'
       },
       data: [
         ['City', '2010 Population',],

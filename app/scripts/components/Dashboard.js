@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Bar from './widgets/bar';
+import Pie from './widgets/pie';
+import Gauge from './widgets/gauge';
+import Timer from './widgets/timer';
 
 class Dashboard extends React.Component {
   render() {
@@ -10,11 +13,51 @@ class Dashboard extends React.Component {
             <h1>Dashboard</h1>
             <div className="row">
               <div className="chart-container col-xs-6">
-                <Bar />
+                <div className="row">
+                  <div className="col-xs-12">
+                    <h3>Population of Largest U.S. Cities</h3>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <Bar />
+                  </div>
+                </div>
               </div>
               <div className="chart-container col-xs-6">
-                <div className="chart">
-                  <p>chart 2</p>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <h3>Pie</h3>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <Pie />
+                  </div>
+                </div>
+              </div>
+              <div className="chart-container col-xs-6">
+                <div className="row">
+                  <div className="col-xs-12">
+                    <h3>Gauges</h3>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <Gauge />
+                  </div>
+                </div>
+              </div>
+              <div className="chart-container col-xs-6">
+                <div className="row">
+                  <div className="col-xs-12">
+                    <h3>Timer</h3>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs-12">
+                    <Timer start={Date.now()} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -24,6 +67,8 @@ class Dashboard extends React.Component {
   }
   componentWillMount() {
     document.body.style.backgroundImage = '';
+    // document.body.style.background = '#fff';
+    // document.getElementById('outer-container').style.background = '#fff';
   }
 }
 
