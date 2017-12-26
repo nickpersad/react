@@ -30,7 +30,8 @@ class Gif extends Component {
       <div className="giphy-container col-xs-12">
         <div className="row">
           {this.state.gifArr.map(item =>
-            <div key={item.id} className="col-xs-6">
+            <div key={item.id} className="col-xs-12">
+              <h2>{item.title}</h2>
               <iframe src={`${item.embed_url}`} frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
             </div>
           )}

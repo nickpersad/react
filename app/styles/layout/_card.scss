@@ -20,6 +20,11 @@
 
 .giphy-container {
   margin: 20px;
+  h2 {
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+  }
   iframe {
     width: 100%;
     border-radius: 0 0 3px 3px;
