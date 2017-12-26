@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import SearchBox from './search';
-import Showing from './showing';
-import Card from './card';
+import SearchBox from './movies/search';
+import Showing from './movies/showing';
+import Card from './movies/card';
+import Gif from './movies/gif';
 
 class Movies extends React.Component {
   constructor(props) {
@@ -111,6 +112,13 @@ class Movies extends React.Component {
       e.preventDefault()
       $('.searchbox__input').val('')
       this.fetchMovieID(e.toElement.offsetParent.id)
+      $("html, body").animate({ scrollTop: 0 }, "slow")
+    }.bind(this));
+
+    $(document).on('click', '#dp', function(e) {
+      e.preventDefault()
+      $('.searchbox__input').val('')
+      this.fetchMovieID('293660')
       $("html, body").animate({ scrollTop: 0 }, "slow")
     }.bind(this));
 
