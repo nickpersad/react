@@ -14,7 +14,6 @@ class Bar extends React.Component {
         vAxis: {
           title: 'City'
         },
-        backgroundColor: '#999'
       },
       data: [
         ['City', '2010 Population',],

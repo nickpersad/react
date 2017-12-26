@@ -10,7 +10,11 @@ class Dashboard extends React.Component {
       <div className="col-xs-12 dashboardcont nopadding">
 
           <div className="dashboard-container col-xs-12">
-            <h1>Dashboard</h1>
+            <div className="main-page-header">
+              <div className="container">
+                <h1>Dashboard</h1>
+              </div>
+            </div>
             <div className="row">
               <div className="chart-container col-xs-6">
                 <div className="row">
@@ -67,8 +71,8 @@ class Dashboard extends React.Component {
   }
   componentWillMount() {
     document.body.style.backgroundImage = '';
-    // document.body.style.background = '#fff';
-    // document.getElementById('outer-container').style.background = '#fff';
+    document.body.style.background = '#fff';
+    document.getElementById('outer-container').style.background = '#fff';
   }
 }
 

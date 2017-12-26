@@ -42,7 +42,7 @@ a {
   position: absolute;
   height: 5px;
   width: 100%;
-  background: $limeGreen;
+  background: #adadad;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -113,11 +113,12 @@ a {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #adadad;
+    background: #fff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    border-right: 1px solid #adadad;
 }
 
 body.toggled {
@@ -146,13 +147,13 @@ body.toggled #sidebar-wrapper {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: #000;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: #adadad;
 }
 
 .sidebar-nav li a:active,

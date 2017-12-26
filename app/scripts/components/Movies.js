@@ -11,6 +11,11 @@ class Movies extends React.Component {
       movieID: 155 // set initital load movie - The Dark Knight
     }
   }
+  componentWillMount() {
+    document.body.style.backgroundImage = '';
+    document.body.style.background = '';
+    document.getElementById('outer-container').style.background = '';
+  }
   render() {
     return (
       <div>
