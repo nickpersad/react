@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+const start = Date.now()
+
 class Timer extends React.Component {
   constructor(props) {
     super(props)
@@ -17,7 +19,7 @@ class Timer extends React.Component {
     clearInterval(this.timer);
   }
   tick() {
-    this.setState({elapsed: new Date() - this.props.start});
+    this.setState({elapsed: new Date() - start});
   }
 
   render() {

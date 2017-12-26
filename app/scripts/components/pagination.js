@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'; // ES6
 
 const propTypes = {
     items: PropTypes.array.isRequired,

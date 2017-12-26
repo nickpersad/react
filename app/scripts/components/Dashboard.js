@@ -56,7 +56,7 @@ class Dashboard extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-xs-12">
-                    <Timer start={Date.now()} />
+                    <Timer />
                   </div>
                 </div>
               </div>
