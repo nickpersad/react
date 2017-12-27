@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-8">
+              <div className="chart-container col-xs-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Gauges</h3>
@@ -52,7 +52,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-4">
+              <div className="chart-container col-xs-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Timer</h3>
@@ -71,8 +71,8 @@ class Dashboard extends React.Component {
   }
   componentWillMount() {
     document.body.style.backgroundImage = '';
-    document.body.style.background = '#fff';
-    document.getElementById('outer-container').style.background = '#fff';
+    document.body.style.background = '#f5f5f5';
+    document.getElementById('outer-container').style.background = '#f5f5f5';
   }
 }
 

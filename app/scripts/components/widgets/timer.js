@@ -26,7 +26,11 @@ class Timer extends React.Component {
     var elapsed = Math.round(this.state.elapsed / 100);
     var seconds = (elapsed / 10).toFixed(1);
 
-    return <p>This example was started <b>{seconds} seconds</b> ago.</p>;
+    return (
+      <div id="Timer">
+        <p>This example was started <b>{seconds} seconds</b> ago.</p>
+      </div>
+    )
   }
 
 

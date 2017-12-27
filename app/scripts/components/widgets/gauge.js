@@ -4,7 +4,7 @@ import { Chart } from 'react-google-charts';
 
 const initialState = {
   options: {
-    width: 400, height: 120,
+    width: 200, height: 120,
     redFrom: 90, redTo: 100,
     yellowFrom:75, yellowTo: 90,
     minorTicks: 5
@@ -12,8 +12,7 @@ const initialState = {
   data: [
     ['Label', 'Value'],
     ['Memory', 0],
-    ['CPU', 0],
-    ['Network', 0]
+    ['CPU', 0]
   ],
 };
 class Gauge extends React.Component {
@@ -32,8 +31,7 @@ class Gauge extends React.Component {
     this.setState({data: [
         ['Label', 'Value'],
         ['Memory', Math.floor(Math.random() * 100) + 1],
-        ['CPU', Math.floor(Math.random() * 100) + 1],
-        ['Network', Math.floor(Math.random() * 100) + 1]
+        ['CPU', Math.floor(Math.random() * 100) + 1]
       ]
     });
   }
@@ -50,7 +48,7 @@ class Gauge extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="Gauge2">
         <Chart
           chartType="Gauge"
           data={this.state.data}
