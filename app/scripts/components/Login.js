@@ -19,6 +19,24 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  fetchApi(url) {
+    let data = {
+      username: this.state.email,
+      password: this.state.password
+    };
+
+    fetch(url,
+    {
+      method: "POST",
+      body: data
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){ console.log( JSON.stringify( data ) ) })
+
+// console.log(data)
+// console.log(url)
+  }
+
   handleEmailChange(event) {
     this.setState({email: event.target.value});
   }
@@ -26,9 +44,10 @@ class Login extends React.Component {
     this.setState({password: event.target.value});
   }
   handleSubmit(event) {
-    console.log('un: ' + this.state.email);
-    console.log('pw: ' + this.state.password);
+    let url = `http://engr-api.devicewise.com/rest/auth`
     event.preventDefault();
+
+    this.fetchApi(url)
   }
 
   render() {
