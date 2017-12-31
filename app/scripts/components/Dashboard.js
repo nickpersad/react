@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
               </div>
             </div>
             <div className="row">
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-sm-12 col-md-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Population of Largest U.S. Cities</h3>
@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-sm-12 col-md-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Pie</h3>
@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-sm-12 col-md-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Gauges</h3>
@@ -52,7 +52,7 @@ class Dashboard extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="chart-container col-xs-6">
+              <div className="chart-container col-sm-12 col-md-6">
                 <div className="row">
                   <div className="col-xs-12">
                     <h3>Timer</h3>
