@@ -20,21 +20,20 @@ class Login extends React.Component {
   }
 
   fetchApi(url) {
-    let data = {
-      username: this.state.email,
-      password: this.state.password
-    };
+    let data = new URLSearchParams()
 
-    fetch(url,
-    {
+    data.append('username', this.state.email)
+    data.append('password', this.state.password)
+
+    fetch(url, {
       method: "POST",
       body: data
     })
-    .then(function(res){ return res.json(); })
-    .then(function(data){ console.log( JSON.stringify( data ) ) })
-
-// console.log(data)
-// console.log(url)
+    .then(function(response) {
+      return response.text();
+    }).then(function(text) {
+      console.log(text);
+    })
   }
 
   handleEmailChange(event) {
