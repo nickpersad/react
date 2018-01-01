@@ -1,10 +1,7 @@
 import React, { Component } from "react";
+import { bake_cookie, read_cookie, delete_cookie } from 'sfcookies';
 
-function setErrorMsg(error) {
-  return {
-    loginMessage: error
-  }
-}
+const cookie_key = 'sessionId';
 
 class Login extends React.Component {
   constructor(props) {
@@ -30,9 +27,15 @@ class Login extends React.Component {
       body: data
     })
     .then(function(response) {
+      if (!response.ok) {
+          throw Error(response.statusText);
+      }
       return response.text();
     }).then(function(text) {
-      console.log(text);
+      console.log('goood ',text);
+      bake_cookie(cookie_key, text);
+    }).catch(function(error) {
+      console.log('bad ', error)
     })
   }
 
